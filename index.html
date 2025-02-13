@@ -27,6 +27,12 @@
      main{
         width:100%;
       }
+
+      .mermaid {
+        background-color: white;
+        padding: 10px;
+        border-radius: 5px;
+      }
     </style>
 </head>
 
@@ -65,7 +71,29 @@
                 depth: 4,
                 hideOtherSidebarContent: false,
                 namespace: 'Docsify-Guide',
-            }
+            },
+            // 添加 markdown 插件配置
+            markdown: {
+                renderer: {
+                    code: function(code, lang) {
+                        if (lang === "mermaid") {
+                            return (
+                                '<div class="mermaid">' + code + "</div>"
+                            );
+                        }
+                        return this.origin.code.apply(this, arguments);
+                    }
+                }
+            },
+            // 加载完成后执行
+            plugins: [
+                function (hook) {
+                    hook.doneEach(function() {
+                        // 渲染所有 mermaid 图表
+                        mermaid.init(undefined, '.mermaid');
+                    });
+                }
+            ]
         }
     </script>
     <!-- docsify的js依赖 -->
@@ -78,6 +106,8 @@
     <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
     <!--在所有的代码块上添加一个简单的Click to copy按钮来允许用户从你的文档中轻易地复制代码-->
     <script src="//cdn.jsdelivr.net/npm/docsify-copy-code/dist/docsify-copy-code.min.js"></script>
+    <!-- Mermaid 支持 -->
+    <script src="//cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
 </body>
 
 </html>
