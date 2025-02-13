@@ -1,6 +1,11 @@
-* Typora+Docsify使用指南
-  * [Docsify使用指南](/docs/Docsify使用指南.md)
-  * [Typora+Docsify快速入门](/docs/Typora+Docsify快速入门.md)
-* Docsify部署
-  * [Docsify部署教程](/docs/Docsify部署教程.md)
+# 荣冠ODM供应链协同系统
 
+* 业务理解
+  * [服装品牌代加工背后的商业运作](docs/10.服装品牌代加工背后的商业运作.md)
+  * [卓越ODM服装厂商供应链解决方案](docs/20.卓越ODM服装厂商供应链解决方案.md)
+
+* 核心模块
+  * [设计与 Tech Pack 协同](docs/40-100.设计与 Tech Pack 协同细化.md)
+  * [从需求产生到 Tech Pack 确认](docs/40-120.从需求产生到 Tech Pack 确认.md)
+  * [生产计划与排程协同](docs/400-200.生产计划与排程协同.md)
+  * [生产计划与排程流程](docs/400-220.生产计划与排程协同.md)
